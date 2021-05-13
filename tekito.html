@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tekito.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <div class="title">
+           
+        <h1>OOTD</h1>
+        <p>outfit of the day</p>
+    </div>
+
+
+    <div class="tops_message">
+        <div class="manekin"><img src="images/manekin.PNG"></div>
+        <h1>today's SELECT</h1>
+
+        <div>
+            <div class="tops_select">
+                <form name="tops">
+                    <div id="output"></div>
+                    <p><img src="images/dottshirts.PNG" width="200" height="200" name="imgsmp"></p>
+                    <p><select id="channel" size="1" onchange="imgChange(this);selectboxChange()">
+                            <OPTION value="0">水玉Tシャツ</OPTION>
+                            <OPTION value="1">グリーンのブラウス</OPTION>
+                            <OPTION value="2">バイカラーブラウス</OPTION>
+                            <OPTION value="3">黒Tシャツ</OPTION>
+                            <OPTION value="4">ストライプシャツ</OPTION>
+                        </select></p>
+                </form>
+
+            </div>
+            <script type="text/javascript" language="javascript">
+                function selectboxChange() {
+                    target = document.getElementById("output");
+
+                    selindex = document.tops.channel.selectedIndex;
+                    switch (selindex) {
+                        case 0:
+                            target.innerHTML = "ボトムスは無地だよね。<br/>";
+                            break;
+                        case 1:
+                            target.innerHTML = "ボトムスはダークめ。<br/>";
+                            break;
+                        case 2:
+                            target.innerHTML = "モノトーンで！<br/>";
+                            break;
+                        case 3:
+                            target.innerHTML = "万能アイテム<br/>";
+                            break;
+                        case 4:
+                            target.innerHTML = "カジュアルめ<br/>";
+                            break;
+                    }
+                }
+            </script>
+
+
+            <form name="bottoms">
+                <p><img src="images/IMG_4321.PNG" width="150" height="300" name="imgsmp1"></p>
+                <p><select id="channel1" size="1" onchange="imgChange(this)">
+                        <OPTION value="5">ストライプパンツ
+                        <OPTION value="6">黒パンツ
+                        <OPTION value="7">ジーンズ
+                        <OPTION value="8">デニムスカート
+                        <OPTION value="9">花柄スカート
+                    </select></p>
+            </form>
+            <div class="site">
+                <a href="https://www.uniqlo.com/jp/ja/women">UNIQLO</a>
+                <a href="https://www.adastria.co.jp/brands/">ADASTRIA</a>
+                <a href="https://zozo.jp/">ZOZO TOWN</a>
+                <a href="https://baycrews.jp/">BAY CRUISE</a>
+            </div>
+
+
+
+            <script>
+                img0 = new Image()
+                img0.src = 'images/dottshirts.PNG'
+                img1 = new Image()
+                img1.src = "images/greenblouse.PNG"
+                img2 = new Image()
+                img2.src = "images/bycolorblouse.PNG"
+                img3 = new Image()
+                img3.src = "images/IMG_4511.PNG"
+                img4 = new Image()
+                img4.src = "images/IMG_4516.PNG"
+                img5 = new Image()
+                img5.src = "images/IMG_4321.PNG"
+                img6 = new Image()
+                img6.src = "images/blackpants.PNG"
+                img7 = new Image()
+                img7.src = "images/jeans.PNG"
+                img8 = new Image()
+                img8.src = "images/IMG_4518.PNG"
+                img9 = new Image()
+                img9.src = "images/flowerskirt.PNG"
+
+                function imgChange(parts) {
+                    fname = parts.options[parts.selectedIndex].value;
+                    if (fname == 0) { document.imgsmp.src = img0.src; }
+                    if (fname == 1) { document.imgsmp.src = img1.src; }
+                    if (fname == 2) { document.imgsmp.src = img2.src; }
+                    if (fname == 3) { document.imgsmp.src = img3.src; }
+                    if (fname == 4) { document.imgsmp.src = img4.src; }
+                    if (fname == 5) { document.imgsmp1.src = img5.src; }
+                    if (fname == 6) { document.imgsmp1.src = img6.src; }
+                    if (fname == 7) { document.imgsmp1.src = img7.src; }
+                    if (fname == 8) { document.imgsmp1.src = img8.src; }
+                    if (fname == 9) { document.imgsmp1.src = img9.src; }
+                }
+            </script>
+        </div>
+    </div>
+
+
+
+
+    <div class="wishlist">
+        <div class="wishicon"><img src="images/IMG_4425.PNG"></div>
+        <h1>WISH LIST</h1>
+
+
+
+        <form name="items">
+
+            <label><img src="images/ドットブラウス.PNG"><input type="checkbox" name="wish" value="ドットブラウス" onclick="keisan()"
+                    class="item"></label>
+            <label><img src="images/ブルーストライプシャツ.PNG"><input type="checkbox" name="wish" value="ブルーストライプシャツ"
+                    onclick="keisan()" class="item"></label>
+            <label><img src="images/IMG_4438.PNG"><input type="checkbox" name="wish" value="ジャケット" onclick="keisan()"
+                    class="item"></label>
+            <label><img src="images/パープルパンツ.PNG"><input type="checkbox" name="wish" value="パープルパンツ"
+                    onclick="keisan()" class="item"></label>
+            <label><img src="images/水玉スカート.PNG"><input type="checkbox" name="wish" value="水玉スカート" onclick="keisan()"
+                    class="item"></label>
+            <label><img src="images/ピンクパンツ.PNG"><input type="checkbox" name="wish" value="ピンクパンツ" class="item"
+                    onclick="keisan()">
+            </label>
+        </form>
+
+        <p><input type="button" value="候補！" onclick="clickBtn1()">
+
+        </p>
+    </div>
+
+
+
+    </div>
+
+    <script>
+
+
+
+        function clickBtn1() {
+            const arr1 = [];
+            const wish = document.items.wish;
+
+            for (let i = 0; i < wish.length; i++) {
+                if (wish[i].checked) { //(color1[i].checked === true)と同じ
+                    arr1.push(wish[i].value);
+                }
+            }
+            document.getElementById("span1").textContent = arr1;
+        }
+
+        plice = new Array();
+        plice[0] = 3000;
+        plice[1] = 2000;
+        plice[2] = 6000;
+        plice[3] = 4500;
+        plice[4] = 3500;
+
+        function keisan() {
+            goukei = 0;
+            for (i = 0; i <= 4; i++) {
+                if (document.items.elements[i].checked == true) {
+                    goukei = goukei + plice[i];
+                }
+            }
+            document.items.total.value = goukei;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+    <div class="mousou">
+        <div class="wishicon"><img src="images/妄想.PNG">
+            <h1>妄想コーデ</h1>
+            <h2>👇click！</h2>
+
+
+            <div class="topsclick">
+
+                <img id="mypic" onclick="slideshow()" src="images/dottshirts.PNG" width="200px" height="180px">
+            </div>
+
+            <script>
+                var pics_src = new Array("images/dottshirts.PNG", "images/IMG_4438.PNG", "images/ブルーストライプシャツ.PNG", "images/IMG_4511.PNG", "images/bycolorblouse.PNG", "images/greenblouse.PNG", "images/IMG_4438.PNG", "images/ドットブラウス.PNG");
+                var num = 0;
+
+                function slideshow() {
+                    if (num == 8) {
+                        num = 0;
+                    }
+                    else {
+                        num++;
+                    }
+                    document.getElementById("mypic").src = pics_src[num];
+                }
+            </script>
+
+
+
+
+            <div class="bbs">
+                <div class="botomschange">
+                    <a class="btn btn-custom01">
+                        <span class="btn-custom01-front" value="ボトムス選択" onclick="getImage()">PUSH</span>
+                        <i class="fas fa-angle-right fa-position-right"></i>
+                    </a>
+
+                    <img id="im2">
+
+                    <script>
+                        function getImage() {
+                            //画像ファイル名を配列で保持
+                            var arr = ['images/jeans.PNG', 'images/flowerskirt.PNG', 'images/blackpants.PNG', 'images/IMG_4518.PNG', 'images/ピンクパンツ.PNG', 'images/水玉スカート.PNG', 'images/パープルパンツ.PNG', 'images/stripepants.PNG'];
+
+                            //ランダムで画像ファイルを取得して表示する
+                            var obj = document.getElementById("im2");
+                            var a = Math.floor(Math.random() * arr.length);
+                            obj.src = arr[a];
+                        }
+                    </script>
+
+                </div>
+                <!-- <div class="bagsandshoes">
+                    <div class="bags">
+                        <p>MY BAGS click!</p>
+                        <img id="mypic1" onclick="slideshow()" src="images/IMG_4464.PNG" width="100px" height="100px">
+                        <script>
+                            var pics_src = new Array("images/IMG_4464.PNG", "images/IMG_4463.PNG", "images/IMG_4462.PNG");
+                            var num = 0;
+
+                            function slideshow() {
+                                if (num == 2) {
+                                    num = 0;
+                                }
+                                else {
+                                    num++;
+                                }
+                                document.getElementById("mypic1").src = pics_src[num];
+                            }
+                        </script>
+                    </div>
+                    <div class="shoes">
+                        <p>MY shoes click!</p>
+                        <img id="mypic2" onclick="slideshow()" src="images/IMG_4464.PNG" width="100px" height="100px">
+                        <script>
+                            var pics_src = new Array("images/IMG_4464.PNG", "images/IMG_4463.PNG", "images/IMG_4462.PNG");
+                            var num = 0;
+
+                            function slideshow() {
+                                if (num == 2) {
+                                    num = 0;
+                                }
+                                else {
+                                    num++;
+                                }
+                                document.getElementById("mypic2").src = pics_src[num];
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="closet"><img src="images/IMG_4470.PNG">
+        <h1>CLOSET capacity</h1>
+        <div class="capacity">
+
+            <div style="width: 150px;">
+                <canvas id="chart1" width="150" height="150"></canvas>
+                <h1>SS tops</h1>
+            </div>
+
+            <div style="width: 150px;">
+                <canvas id="chart2" width="150" height="150"></canvas>
+                <h1>SS botoms</h1>
+            </div>
+
+        </div>
+
+        <script>
+            var ctx = $('#chart1');
+            var mychart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+
+                    datasets: [{
+                        label: 'サンプルグラフ',
+                        data: [
+                            5,
+                            20,
+
+                        ],
+                        backgroundColor: [
+                            'rgba(245,245,245,1)',
+                            'rgba( 169, 169, 169, 1)',
+                            'rgba(249, 199,  83, 1)',
+                            'rgba(176, 110,  30, 1)',
+                            'rgba(124,  91, 164, 1)'
+                        ]
+                    }]
+                },
+                options: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                display: false,
+                                beginAtZero: true,
+                            },
+                            gridLines: {
+                                display: false
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+        <script>
+            var ctx = $('#chart2');
+            var mychart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+
+                    datasets: [{
+                        label: 'サンプルグラフ',
+                        data: [
+                            5,
+                            15,
+
+                        ],
+                        backgroundColor: [
+                            'rgba(245,245,245,1)',
+                            'rgba( 169, 169, 169, 1)',
+                            'rgba(249, 199,  83, 1)',
+                            'rgba(176, 110,  30, 1)',
+                            'rgba(124,  91, 164, 1)'
+                        ]
+                    }]
+                },
+                options: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                display: false,
+                                beginAtZero: true,
+                            },
+                            gridLines: {
+                                display: false
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+
+
+
+
+
+        <div class="shopping">
+            <div class="manekin"><img src="images/IMG_4423.PNG"></div>
+            <h1>お買い物候補リスト 予算15000円<br>
+                <span id="span1"></span>
+
+            </h1>
+            <form name="myform">
+
+
+                <img src="images/ドットブラウス.PNG"><input type="checkbox" onclick="keisan()" name="wish" value="ドットブラウス"
+                    class="item">
+                <img src="images/ブルーストライプシャツ.PNG"><input type="checkbox" onclick="keisan()" name="wish"
+                    value="ブルーストライプシャツ" class="item">
+                <img src="images/IMG_4438.PNG"><input type="checkbox" onclick="keisan()" name="wish" value="ボーダーシャツ"
+                    class="item">
+                <img src="images/パープルパンツ.PNG"><input type="checkbox" onclick="keisan()" name="wish" value="パープルパンツ"
+                    class="item">
+                <img src="images/水玉スカート.PNG"><input type="checkbox" onclick="keisan()" name="wish" value="水玉スカート"
+                    class="item">
+                <img src="images/ピンクパンツ.PNG"><input type="checkbox" onclick="keisan()" name="wish" value="ピンクパンツ"
+                    class="item">
+
+                <div class="regi">
+                    合計金額<input type="text" id='kingaku' name="total" value="0"> 円
+                    <input type="button" value="買います！" onclick="clickBtn2()">
+                    <div id="result">
+                    </div>
+
+
+
+            </form>
+            <script>
+                function clickBtn2() {
+                    var i = document.getElementById('kingaku').value;
+                    // kingaku = Number(kingaku);
+                    if (i < 15000) {
+                        $("#result").text("予算内");
+                    } else {
+                        $("#result").text("予算オーバー");
+                    }
+                }
+
+
+                function clickBtn1() {
+                    const arr1 = [];
+                    const wish = document.items.wish;
+
+                    for (let i = 0; i < wish.length; i++) {
+                        if (wish[i].checked) { //(color1[i].checked === true)と同じ
+                            arr1.push(wish[i].value);
+                        }
+                    }
+                    document.getElementById("span1").textContent = arr1;
+                }
+
+            </script>
+
+            <script>
+                plice = new Array();
+                plice[0] = 5000;
+                plice[1] = 4500;
+                plice[2] = 4000;
+                plice[3] = 3500;
+                plice[4] = 3000;
+                plice[5] = 2500;
+                function keisan() {
+                    goukei = 0;
+                    for (i = 0; i <= 5; i++) {
+                        if (document.myform.elements[i].checked == true) {
+                            goukei = goukei + plice[i];
+                        }
+                    }
+                    document.myform.total.value = goukei;
+                }
+            </script>
+
+
+
+
+
+
+
+</html>
